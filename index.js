@@ -4,7 +4,7 @@
  *     var a = { foo: 'bar' }
  *       , b = { bar: 'baz' };
  *
- *     utils.merge(a, b);
+ *     merge(a, b);
  *     // => { foo: 'bar', bar: 'baz' }
  *
  * @param {Object} a

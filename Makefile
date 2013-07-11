@@ -8,13 +8,17 @@ TESTS = test/*.test.js
 MOCHA = ./node_modules/.bin/mocha
 
 test: test-node
-test-node:
+test-node: node_modules
 	$(MOCHA) \
 		--reporter spec \
 		--require test/bootstrap/node $(TESTS)
 
+node_modules:
+	npm install
+
+
 # ==============================================================================
-# Static Analysis
+# Code Quality
 # ==============================================================================
 
 JSHINT = jshint
@@ -24,4 +28,17 @@ lint:
 	$(JSHINT) $(SOURCES)
 
 
-.PHONY: test test-node hint lint
+# ==============================================================================
+# Clean
+# ==============================================================================
+
+clean:
+	rm -rf build
+
+clobber: clean
+	rm -rf node_modules
+	rm -rf components
+	rm -rf test/www/js/lib
+
+
+.PHONY: test test-node hint lint clean clobber
