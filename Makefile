@@ -1,44 +1,49 @@
 SOURCES = *.js
 TESTS = test/*.test.js
 
+lint: lint-jshint
+test: test-mocha
+test-cov: test-istanbul-mocha
+view-cov: view-istanbul-report
+
+
 # ==============================================================================
-# Node Tests
+# Node.js
 # ==============================================================================
+include support/mk/node.mk
+include support/mk/mocha.mk
 
-MOCHA = ./node_modules/.bin/mocha
+# ==============================================================================
+# Browserify
+# ==============================================================================
+BROWSERIFY_MAIN = ./index.js
 
-test: test-node
-test-node: node_modules
-	$(MOCHA) \
-		--reporter spec \
-		--require test/bootstrap/node $(TESTS)
-
-node_modules:
-	npm install
-
+include support/mk/browserify.mk
+include support/mk/testling.mk
 
 # ==============================================================================
 # Code Quality
 # ==============================================================================
+include support/mk/notes.mk
+include support/mk/jshint.mk
+include support/mk/istanbul.mk
 
-JSHINT = jshint
+# ==============================================================================
+# Continuous Integration
+# ==============================================================================
+include support/mk/coveralls.mk
 
-hint: lint
-lint:
-	$(JSHINT) $(SOURCES)
-
+ci-travis: test test-cov
+submit-coverage-to-coveralls: submit-istanbul-lcov-to-coveralls
 
 # ==============================================================================
 # Clean
 # ==============================================================================
-
 clean:
 	rm -rf build
+	rm -rf reports
 
-clobber: clean
-	rm -rf node_modules
-	rm -rf components
-	rm -rf test/www/js/lib
+clobber: clean clobber-node
 
 
-.PHONY: test test-node hint lint clean clobber
+.PHONY: lint test test-cov view-cov ci-travis clean clobber
