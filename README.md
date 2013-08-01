@@ -1,5 +1,10 @@
 # utils-merge
 
+[![Build](https://travis-ci.org/jaredhanson/utils-merge.png)](http://travis-ci.org/jaredhanson/utils-merge)
+[![Coverage](https://coveralls.io/repos/jaredhanson/utils-merge/badge.png)](https://coveralls.io/r/jaredhanson/utils-merge)
+[![Dependencies](https://david-dm.org/jaredhanson/utils-merge.png)](http://david-dm.org/jaredhanson/utils-merge)
+
+
 Merges the properties from a source object into a destination object.
 
 ## Install
@@ -20,8 +25,6 @@ merge(a, b);
 
     $ npm install
     $ npm test
-
-[![Build Status](https://secure.travis-ci.org/jaredhanson/utils-merge.png)](http://travis-ci.org/jaredhanson/utils-merge)
 
 ## Credits
 
