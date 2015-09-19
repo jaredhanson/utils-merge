@@ -4,6 +4,9 @@ node_js:
   - "0.6"
   - "0.8"
   - "0.10"
+  - "0.12"
+  - "4.0"
+  - "4.1"
 
 before_install:
  - "npm install istanbul -g"
