@@ -1,49 +1,23 @@
-SOURCES = *.js
-TESTS = test/*.test.js
-
-lint: lint-jshint
-test: test-mocha
-test-cov: test-istanbul-mocha
-view-cov: view-istanbul-report
+include node_modules/make-node/main.mk
 
 
-# ==============================================================================
-# Node.js
-# ==============================================================================
-include support/mk/node.mk
-include support/mk/mocha.mk
+SOURCES = lib/*.js lib/**/*.js
+TESTS = test/*.test.js test/**/*.test.js
 
-# ==============================================================================
-# Browserify
-# ==============================================================================
-BROWSERIFY_MAIN = ./index.js
-
-include support/mk/browserify.mk
-include support/mk/testling.mk
-
-# ==============================================================================
-# Code Quality
-# ==============================================================================
-include support/mk/notes.mk
-include support/mk/jshint.mk
-include support/mk/istanbul.mk
-
-# ==============================================================================
-# Continuous Integration
-# ==============================================================================
-include support/mk/coveralls.mk
-
-ci-travis: test test-cov
-submit-coverage-to-coveralls: submit-istanbul-lcov-to-coveralls
-
-# ==============================================================================
-# Clean
-# ==============================================================================
-clean:
-	rm -rf build
-	rm -rf reports
-
-clobber: clean clobber-node
+LCOVFILE = ./reports/coverage/lcov.info
 
 
-.PHONY: lint test test-cov view-cov ci-travis clean clobber
+view-docs:
+	open ./docs/index.html
+
+view-cov:
+	open ./reports/coverage/lcov-report/index.html
+
+clean: clean-docs clean-cov
+	-rm -r $(REPORTSDIR)
+
+clobber: clean
+	-rm -r node_modules
+
+
+.PHONY: clean clobber

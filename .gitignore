@@ -1,5 +1,5 @@
-build
-reports
+docs/
+reports/
 
 # Mac OS X
 .DS_Store

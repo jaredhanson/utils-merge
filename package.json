@@ -5,6 +5,11 @@
   "keywords": [
     "util"
   ],
+  "author": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "url": "http://www.jaredhanson.net/"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jaredhanson/utils-merge.git"
@@ -12,16 +17,18 @@
   "bugs": {
     "url": "http://github.com/jaredhanson/utils-merge/issues"
   },
-  "author": {
-    "name": "Jared Hanson",
-    "email": "jaredhanson@gmail.com",
-    "url": "http://www.jaredhanson.net/"
-  },
   "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
   "main": "./index",
   "dependencies": {
   },
   "devDependencies": {
+    "make-node": "0.3.x",
     "mocha": "1.x.x",
     "chai": "1.x.x"
   },
@@ -30,15 +37,5 @@
   },
   "scripts": {
     "test": "node_modules/.bin/mocha --reporter spec --require test/bootstrap/node test/*.test.js"
-  },
-  "testling": {
-    "browsers": [
-      "chrome/latest"
-    ],
-    "harness" : "mocha",
-    "files": [
-      "test/bootstrap/testling.js",
-      "test/*.test.js"
-    ]
   }
 }
