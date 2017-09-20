@@ -1,6 +1,6 @@
 {
   "name": "utils-merge",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "merge() utility function",
   "keywords": [
     "util"
@@ -25,8 +25,7 @@
     }
   ],
   "main": "./index",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "make-node": "0.3.x",
     "mocha": "1.x.x",
