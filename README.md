@@ -4,7 +4,7 @@ Merges the properties from a source object into a destination object.
 
 ---
 
-<p align="center">Become an development expert in your field at <a href="http://www.dpbolvw.net/click-8907122-12198424" target="_top">apress.com</a></p>
+<p align="center">Become an development expert in your field at <a href="http://www.tkqlhce.com/click-8907558-12198424" target="_top">apress.com</a></p>
 
 ---
 
