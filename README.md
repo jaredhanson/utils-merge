@@ -2,6 +2,16 @@
 
 Merges the properties from a source object into a destination object.
 
+---
+
+<p align="center">
+  <sup>Advertisement</sup>
+  <br>
+  <a href="https://click.linksynergy.com/link?id=D*o7yui4/NM&offerid=507388.461160&type=2&murl=https%3A%2F%2Fwww.udemy.com%2Fcourse%2Funderstand-nodejs%2F&u1=1dw6XFxTsyH0lRbbsTNbZpk9fa7NJtoRpICQJ">Learn and Understand NodeJS</a><br>Dive deep under the hood of NodeJS. Learn V8, Express, the MEAN stack, core Javascript concepts, and more.
+</p>
+
+---
+
 Status:
 [![Version](https://img.shields.io/npm/v/utils-merge.svg?label=version)](https://www.npmjs.com/package/utils-merge)
 [![Build](https://img.shields.io/travis/jaredhanson/utils-merge.svg)](https://travis-ci.org/jaredhanson/utils-merge)
