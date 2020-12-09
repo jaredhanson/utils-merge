@@ -13,10 +13,12 @@
  * @api public
  */
 
-exports = module.exports = function(a, b){
+exports = module.exports = function (a, b) {
   if (a && b) {
-    for (var key in b) {
-      a[key] = b[key];
+    var allowedAttrs = Object.getOwnPropertyNames(b);
+    console.log(allowedAttrs)
+    for (var allowedAttrs in b) {
+      a[allowedAttrs] = b[allowedAttrs];
     }
   }
   return a;
