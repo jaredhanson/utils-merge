@@ -16,7 +16,10 @@
 exports = module.exports = function(a, b){
   if (a && b) {
     for (var key in b) {
+     //fix prototype pollution
+     if (key !== '__proto__' && key !== 'prototype' && key !== 'constructor'){
       a[key] = b[key];
+     }
     }
   }
   return a;
