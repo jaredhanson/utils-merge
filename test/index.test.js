@@ -47,5 +47,23 @@ describe('merge', function() {
       expect(o).to.be.equal(a);
     });
   });
-  
+
+   it('should not mutate first parameter', function() {
+    const foo = { foo: "foo" };
+    const bar = { bar: "bar" };
+    const result = merge(foo, bar);
+    expect(Object.keys(foo)).to.have.length(1);
+    expect(result.foo).to.be.equal('foo');
+    expect(result.bar).to.be.equal('bar');
+  });
+
+    
+  it('should not mutate second parameter', function() {
+    const foo = { foo: "foo" };
+    const bar = { bar: "bar" };
+    const result = merge(foo, bar);
+    expect(Object.keys(bar)).to.have.length(1);
+    expect(result.foo).to.be.equal('foo');
+    expect(result.bar).to.be.equal('bar');
+  });
 });
