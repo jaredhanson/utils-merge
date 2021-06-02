@@ -16,7 +16,7 @@
 exports = module.exports = function (a, b) {
   if (a && b) {
     var allowedAttrs = Object.getOwnPropertyNames(b);
-    console.log(allowedAttrs)
+    
     for (var allowedAttrs in b) {
       a[allowedAttrs] = b[allowedAttrs];
     }
