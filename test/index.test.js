@@ -10,7 +10,7 @@ describe('merge', function() {
     it('should merge properties into first object', function() {
       expect(Object.keys(a)).to.have.length(2);
       expect(a.foo).to.be.equal('bar');
-      expect(a.bar).to.be.equal('baz');
+      expect(b.bar).to.be.equal('baz');
     });
     
     it('should return first argument', function() {
